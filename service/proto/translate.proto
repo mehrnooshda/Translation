@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package translation;
+
+// The translation service definition.
+service TranslationService {
+  // Translates text from one language to another.
+  rpc TranslateText (TranslateTextRequest) returns (TranslateTextResponse) {}
+}
+
+// The request message containing the text to be translated.
+message TranslateTextRequest {
+  string text = 1;
+}
+
+// The response message containing the translated text.
+message TranslateTextResponse {
+  string translated_text = 1;
+}
